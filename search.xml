@@ -22,7 +22,13 @@
 <p>Tomcat打印台、打印出来的字体全是乱码后的显示、影响视觉体验，不利于bug查找和错误排查、故寻找方法去修改。</p>
 <p><strong>解决方法：</strong></p>
 <p><strong>1、找到目录</strong></p>
-<p>![01](hexo 解决Tomcat9打印台乱码问题/01.png)</p>
+<p><img src="/2021/01/20/%E8%A7%A3%E5%86%B3Tomcat9%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/01.png" alt="01"></p>
+<p><strong>2、对日志参数进行修改</strong></p>
+<p><img src="/2021/01/20/%E8%A7%A3%E5%86%B3Tomcat9%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/02.png" alt="02"></p>
+<p><strong>3、改动编码</strong></p>
+<p><img src="/2021/01/20/%E8%A7%A3%E5%86%B3Tomcat9%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/03.png" alt="03"></p>
+<p><strong>4、修改成功！</strong></p>
+<p><img src="/2021/01/20/%E8%A7%A3%E5%86%B3Tomcat9%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/04.png" alt="04"></p>
 ]]></content>
       <tags>
         <tag>Tomcat</tag>

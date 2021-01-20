@@ -20,18 +20,23 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="解决Tomcat9打印台乱码问题 问题描述： Tomcat打印台、打印出来的字体全是乱码后的显示、影响视觉体验，不利于bug查找和错误排查、故寻找方法去修改。 解决方法： 1、找到目录 ![01](hexo 解决Tomcat9打印台乱码问题&#x2F;01.png)">
+  <meta name="description" content="解决Tomcat9打印台乱码问题 问题描述： Tomcat打印台、打印出来的字体全是乱码后的显示、影响视觉体验，不利于bug查找和错误排查、故寻找方法去修改。 解决方法： 1、找到目录  2、对日志参数进行修改  3、改动编码  4、修改成功！">
 <meta property="og:type" content="article">
 <meta property="og:title" content="解决Tomcat9乱码问题">
 <meta property="og:url" content="http://example.com/2021/01/20/%E8%A7%A3%E5%86%B3Tomcat9%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="Frank&#39;s blog">
-<meta property="og:description" content="解决Tomcat9打印台乱码问题 问题描述： Tomcat打印台、打印出来的字体全是乱码后的显示、影响视觉体验，不利于bug查找和错误排查、故寻找方法去修改。 解决方法： 1、找到目录 ![01](hexo 解决Tomcat9打印台乱码问题&#x2F;01.png)">
+<meta property="og:description" content="解决Tomcat9打印台乱码问题 问题描述： Tomcat打印台、打印出来的字体全是乱码后的显示、影响视觉体验，不利于bug查找和错误排查、故寻找方法去修改。 解决方法： 1、找到目录  2、对日志参数进行修改  3、改动编码  4、修改成功！">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2021/01/20/%E8%A7%A3%E5%86%B3Tomcat9%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/01.png">
+<meta property="og:image" content="http://example.com/2021/01/20/%E8%A7%A3%E5%86%B3Tomcat9%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/02.png">
+<meta property="og:image" content="http://example.com/2021/01/20/%E8%A7%A3%E5%86%B3Tomcat9%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/03.png">
+<meta property="og:image" content="http://example.com/2021/01/20/%E8%A7%A3%E5%86%B3Tomcat9%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/04.png">
 <meta property="article:published_time" content="2021-01-20T03:04:13.000Z">
-<meta property="article:modified_time" content="2021-01-20T03:11:39.398Z">
+<meta property="article:modified_time" content="2021-01-20T03:33:36.091Z">
 <meta property="article:author" content="Frank Shaw">
 <meta property="article:tag" content="Tomcat">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2021/01/20/%E8%A7%A3%E5%86%B3Tomcat9%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/01.png">
 
 <link rel="canonical" href="http://example.com/2021/01/20/%E8%A7%A3%E5%86%B3Tomcat9%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/">
 
@@ -203,7 +208,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-01-20 11:04:13 / 修改时间：11:11:39" itemprop="dateCreated datePublished" datetime="2021-01-20T11:04:13+08:00">2021-01-20</time>
+              <time title="创建时间：2021-01-20 11:04:13 / 修改时间：11:33:36" itemprop="dateCreated datePublished" datetime="2021-01-20T11:04:13+08:00">2021-01-20</time>
             </span>
 
           
@@ -222,7 +227,13 @@
 <p>Tomcat打印台、打印出来的字体全是乱码后的显示、影响视觉体验，不利于bug查找和错误排查、故寻找方法去修改。</p>
 <p><strong>解决方法：</strong></p>
 <p><strong>1、找到目录</strong></p>
-<p>![01](hexo 解决Tomcat9打印台乱码问题/01.png)</p>
+<p><img src="/2021/01/20/%E8%A7%A3%E5%86%B3Tomcat9%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/01.png" alt="01"></p>
+<p><strong>2、对日志参数进行修改</strong></p>
+<p><img src="/2021/01/20/%E8%A7%A3%E5%86%B3Tomcat9%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/02.png" alt="02"></p>
+<p><strong>3、改动编码</strong></p>
+<p><img src="/2021/01/20/%E8%A7%A3%E5%86%B3Tomcat9%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/03.png" alt="03"></p>
+<p><strong>4、修改成功！</strong></p>
+<p><img src="/2021/01/20/%E8%A7%A3%E5%86%B3Tomcat9%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/04.png" alt="04"></p>
 
     </div>
 
